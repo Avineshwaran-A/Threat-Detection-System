@@ -30,3 +30,47 @@
 2026-06-28 17:33:00,710 [INFO    ] main: Stopping: AnalyzerWorker-0
 2026-06-28 17:33:00,793 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
 2026-06-28 17:33:00,793 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
+2026-06-28 17:50:49,716 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:50:49,716 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/quarantine_zone
+2026-06-28 17:50:49,716 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/rules
+2026-06-28 17:50:49,717 [INFO    ] main: Dashboard started.
+2026-06-28 17:50:49,724 [INFO    ] engines.analyzer: YARA: compiled 1 rule file(s).
+2026-06-28 17:50:49,725 [INFO    ] engines.analyzer: AnalyzerWorker-0 started.
+2026-06-28 17:50:49,725 [INFO    ] engines.analyzer: AnalyzerWorker-1 started.
+2026-06-28 17:50:49,726 [INFO    ] core.watcher: Watcher started on: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:51:53,268 [INFO    ] core.watcher: Enqueuing file for analysis: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/clean.txt
+2026-06-28 17:51:53,269 [INFO    ] engines.analyzer: [AnalyzerWorker-0] Scanning: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/clean.txt
+2026-06-28 17:51:53,305 [INFO    ] remediation.quarantine: Risk score for 'clean.txt': 0/250  reasons=[Clean]
+2026-06-28 17:51:53,305 [INFO    ] engines.analyzer: [AnalyzerWorker-0] Finished: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/clean.txt | quarantined=False
+2026-06-28 17:52:16,431 [INFO    ] core.watcher: Enqueuing file for analysis: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/invoice.pdf
+2026-06-28 17:52:16,432 [INFO    ] engines.analyzer: [AnalyzerWorker-1] Scanning: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/invoice.pdf
+2026-06-28 17:52:16,434 [WARNING ] engines.analyzer: YARA matched rules ['Detect_Linux_ELF_Magic_Wrong_Extension'] on /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/invoice.pdf
+2026-06-28 17:52:16,463 [INFO    ] remediation.quarantine: Risk score for 'invoice.pdf': 70/250  reasons=[YARA: Detect_Linux_ELF_Magic_Wrong_Extension (+70)]
+2026-06-28 17:52:16,463 [WARNING ] remediation.quarantine: THREAT DETECTED – score 70 ≥ 70, quarantining: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/invoice.pdf
+2026-06-28 17:52:16,463 [INFO    ] remediation.quarantine: Quarantined '/home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/invoice.pdf' → './quarantine_zone/invoice.pdf.20260628_175216_463663.quarantined'
+2026-06-28 17:52:16,463 [INFO    ] remediation.quarantine: Permissions stripped on: ./quarantine_zone/invoice.pdf.20260628_175216_463663.quarantined
+2026-06-28 17:52:16,463 [INFO    ] engines.analyzer: [AnalyzerWorker-1] Finished: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/invoice.pdf | quarantined=True
+2026-06-28 17:54:00,661 [INFO    ] main: Shutdown triggered – stopping components …
+2026-06-28 17:54:00,661 [INFO    ] main: Stopping: Dashboard
+2026-06-28 17:54:00,905 [INFO    ] main: Stopping: FileSystemWatcher
+2026-06-28 17:54:00,906 [INFO    ] core.watcher: Watcher stopped.
+2026-06-28 17:54:00,906 [INFO    ] main: Stopping: AnalyzerWorker-1
+2026-06-28 17:54:00,906 [INFO    ] main: Stopping: AnalyzerWorker-0
+2026-06-28 17:54:01,021 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
+2026-06-28 17:54:01,118 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
+2026-06-28 17:54:15,166 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:54:15,167 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/quarantine_zone
+2026-06-28 17:54:15,167 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/rules
+2026-06-28 17:54:15,167 [INFO    ] main: Dashboard started.
+2026-06-28 17:54:15,174 [INFO    ] engines.analyzer: YARA: compiled 1 rule file(s).
+2026-06-28 17:54:15,175 [INFO    ] engines.analyzer: AnalyzerWorker-0 started.
+2026-06-28 17:54:15,179 [INFO    ] engines.analyzer: AnalyzerWorker-1 started.
+2026-06-28 17:54:15,180 [INFO    ] core.watcher: Watcher started on: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:59:42,415 [INFO    ] main: Shutdown triggered – stopping components …
+2026-06-28 17:59:42,415 [INFO    ] main: Stopping: Dashboard
+2026-06-28 17:59:42,647 [INFO    ] main: Stopping: FileSystemWatcher
+2026-06-28 17:59:42,647 [INFO    ] core.watcher: Watcher stopped.
+2026-06-28 17:59:42,648 [INFO    ] main: Stopping: AnalyzerWorker-1
+2026-06-28 17:59:42,648 [INFO    ] main: Stopping: AnalyzerWorker-0
+2026-06-28 17:59:42,682 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
+2026-06-28 17:59:42,865 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
