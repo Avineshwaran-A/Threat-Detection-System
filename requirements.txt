@@ -1,0 +1,5 @@
+watchdog>=3.0.0
+yara-python>=4.3.0
+pyclamd>=0.4.0
+python-magic>=0.4.27
+rich>=13.0.0

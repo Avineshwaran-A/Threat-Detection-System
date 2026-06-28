@@ -1,0 +1,32 @@
+2026-06-28 17:25:58,311 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:25:58,311 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/quarantine_zone
+2026-06-28 17:25:58,311 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/rules
+2026-06-28 17:25:58,311 [INFO    ] main: Dashboard started.
+2026-06-28 17:25:58,314 [ERROR   ] engines.analyzer: YARA compilation error: /home/avinesh/Desktop/ThreatDetectionSystem/rules/sample_rules.yar(74): undefined identifier "filename"
+2026-06-28 17:25:58,314 [INFO    ] engines.analyzer: AnalyzerWorker-0 started.
+2026-06-28 17:25:58,316 [INFO    ] engines.analyzer: AnalyzerWorker-1 started.
+2026-06-28 17:25:58,318 [INFO    ] core.watcher: Watcher started on: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:26:19,746 [INFO    ] main: Shutdown triggered – stopping components …
+2026-06-28 17:26:19,746 [INFO    ] main: Stopping: Dashboard
+2026-06-28 17:26:19,945 [INFO    ] main: Stopping: FileSystemWatcher
+2026-06-28 17:26:19,946 [INFO    ] core.watcher: Watcher stopped.
+2026-06-28 17:26:19,946 [INFO    ] main: Stopping: AnalyzerWorker-1
+2026-06-28 17:26:19,946 [INFO    ] main: Stopping: AnalyzerWorker-0
+2026-06-28 17:26:20,083 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
+2026-06-28 17:26:20,083 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
+2026-06-28 17:31:52,453 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:31:52,454 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/quarantine_zone
+2026-06-28 17:31:52,454 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/rules
+2026-06-28 17:31:52,454 [INFO    ] main: Dashboard started.
+2026-06-28 17:31:52,462 [INFO    ] engines.analyzer: YARA: compiled 1 rule file(s).
+2026-06-28 17:31:52,463 [INFO    ] engines.analyzer: AnalyzerWorker-0 started.
+2026-06-28 17:31:52,464 [INFO    ] engines.analyzer: AnalyzerWorker-1 started.
+2026-06-28 17:31:52,465 [INFO    ] core.watcher: Watcher started on: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 17:33:00,533 [INFO    ] main: Shutdown triggered – stopping components …
+2026-06-28 17:33:00,534 [INFO    ] main: Stopping: Dashboard
+2026-06-28 17:33:00,709 [INFO    ] main: Stopping: FileSystemWatcher
+2026-06-28 17:33:00,710 [INFO    ] core.watcher: Watcher stopped.
+2026-06-28 17:33:00,710 [INFO    ] main: Stopping: AnalyzerWorker-1
+2026-06-28 17:33:00,710 [INFO    ] main: Stopping: AnalyzerWorker-0
+2026-06-28 17:33:00,793 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
+2026-06-28 17:33:00,793 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
