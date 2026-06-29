@@ -74,3 +74,51 @@
 2026-06-28 17:59:42,648 [INFO    ] main: Stopping: AnalyzerWorker-0
 2026-06-28 17:59:42,682 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
 2026-06-28 17:59:42,865 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
+2026-06-28 19:30:20,340 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 19:30:20,340 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/quarantine_zone
+2026-06-28 19:30:20,340 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/rules
+2026-06-28 19:30:20,340 [INFO    ] main: Dashboard started.
+2026-06-28 19:30:20,348 [INFO    ] engines.analyzer: YARA: compiled 1 rule file(s).
+2026-06-28 19:30:20,349 [INFO    ] engines.analyzer: AnalyzerWorker-0 started.
+2026-06-28 19:30:20,350 [INFO    ] engines.analyzer: AnalyzerWorker-1 started.
+2026-06-28 19:30:20,355 [INFO    ] core.watcher: Watcher started on: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 19:43:04,134 [INFO    ] main: Shutdown triggered – stopping components …
+2026-06-28 19:43:04,134 [INFO    ] main: Stopping: Dashboard
+2026-06-28 19:43:04,168 [INFO    ] main: Stopping: FileSystemWatcher
+2026-06-28 19:43:04,169 [INFO    ] core.watcher: Watcher stopped.
+2026-06-28 19:43:04,169 [INFO    ] main: Stopping: AnalyzerWorker-1
+2026-06-28 19:43:04,169 [INFO    ] main: Stopping: AnalyzerWorker-0
+2026-06-28 19:43:04,212 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
+2026-06-28 19:43:04,212 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.
+2026-06-28 19:43:24,098 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 19:43:24,098 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/quarantine_zone
+2026-06-28 19:43:24,098 [INFO    ] main: Directory ready: /home/avinesh/Desktop/ThreatDetectionSystem/rules
+2026-06-28 19:43:24,098 [INFO    ] main: Dashboard started.
+2026-06-28 19:43:24,103 [INFO    ] engines.analyzer: YARA: compiled 1 rule file(s).
+2026-06-28 19:43:24,105 [INFO    ] engines.analyzer: AnalyzerWorker-0 started.
+2026-06-28 19:43:24,106 [INFO    ] engines.analyzer: AnalyzerWorker-1 started.
+2026-06-28 19:43:24,106 [INFO    ] core.watcher: Watcher started on: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone
+2026-06-28 19:43:24,107 [INFO    ] core.watcher: Enqueuing file for analysis: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/water_quality_test_3classes.csv
+2026-06-28 19:43:24,107 [INFO    ] engines.analyzer: [AnalyzerWorker-0] Scanning: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/water_quality_test_3classes.csv
+2026-06-28 19:43:24,107 [INFO    ] core.watcher: Enqueuing file for analysis: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/email dataset ex 2.pdf
+2026-06-28 19:43:24,107 [INFO    ] engines.analyzer: [AnalyzerWorker-1] Scanning: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/email dataset ex 2.pdf
+2026-06-28 19:43:24,107 [INFO    ] core.watcher: Enqueuing file for analysis: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/dev-lab-manual.pdf
+2026-06-28 19:43:24,107 [INFO    ] core.watcher: Enqueuing file for analysis: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/Assignment_1_DLT.docx
+2026-06-28 19:43:24,113 [INFO    ] remediation.quarantine: Risk score for 'water_quality_test_3classes.csv': 0/250  reasons=[Clean]
+2026-06-28 19:43:24,113 [INFO    ] engines.analyzer: [AnalyzerWorker-0] Finished: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/water_quality_test_3classes.csv | quarantined=False
+2026-06-28 19:43:24,113 [INFO    ] engines.analyzer: [AnalyzerWorker-0] Scanning: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/dev-lab-manual.pdf
+2026-06-28 19:43:24,141 [INFO    ] remediation.quarantine: Risk score for 'email dataset ex 2.pdf': 30/250  reasons=[High entropy: 7.8301 (+30)]
+2026-06-28 19:43:24,148 [INFO    ] engines.analyzer: [AnalyzerWorker-1] Finished: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/email dataset ex 2.pdf | quarantined=False
+2026-06-28 19:43:24,148 [INFO    ] engines.analyzer: [AnalyzerWorker-1] Scanning: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/Assignment_1_DLT.docx
+2026-06-28 19:43:24,149 [INFO    ] remediation.quarantine: Risk score for 'dev-lab-manual.pdf': 30/250  reasons=[High entropy: 7.8516 (+30)]
+2026-06-28 19:43:24,149 [INFO    ] engines.analyzer: [AnalyzerWorker-0] Finished: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/dev-lab-manual.pdf | quarantined=False
+2026-06-28 19:43:24,159 [INFO    ] remediation.quarantine: Risk score for 'Assignment_1_DLT.docx': 30/250  reasons=[High entropy: 7.3944 (+30)]
+2026-06-28 19:43:24,159 [INFO    ] engines.analyzer: [AnalyzerWorker-1] Finished: /home/avinesh/Desktop/ThreatDetectionSystem/monitored_zone/Assignment_1_DLT.docx | quarantined=False
+2026-06-28 19:43:54,207 [INFO    ] main: Shutdown triggered – stopping components …
+2026-06-28 19:43:54,207 [INFO    ] main: Stopping: Dashboard
+2026-06-28 19:43:54,392 [INFO    ] main: Stopping: FileSystemWatcher
+2026-06-28 19:43:54,392 [INFO    ] core.watcher: Watcher stopped.
+2026-06-28 19:43:54,393 [INFO    ] main: Stopping: AnalyzerWorker-1
+2026-06-28 19:43:54,393 [INFO    ] main: Stopping: AnalyzerWorker-0
+2026-06-28 19:43:54,461 [INFO    ] engines.analyzer: AnalyzerWorker-0 stopped.
+2026-06-28 19:43:54,461 [INFO    ] engines.analyzer: AnalyzerWorker-1 stopped.

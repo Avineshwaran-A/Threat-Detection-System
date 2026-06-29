@@ -58,11 +58,16 @@ class ThreatEventHandler(FileSystemEventHandler):
             return True
         return False
 
+    # Seconds before the same path can be re-enqueued (debounce window)
+    DEDUP_TTL = 2.0
+
     def _enqueue(self, path: str) -> None:
         """
         Place *path* on the work queue, logging the action.
-        De-duplicates within a short window so rapid save events
+        De-duplicates within DEDUP_TTL seconds so rapid save events
         (e.g. editor writes) don't spawn multiple scan jobs.
+        After DEDUP_TTL the path is removed from _seen so future
+        modifications to the same file are picked up again.
         """
         abs_path = os.path.abspath(path)
 
@@ -75,6 +80,9 @@ class ThreatEventHandler(FileSystemEventHandler):
                 logger.debug("Duplicate event skipped: %s", abs_path)
                 return
             self._seen.add(abs_path)
+
+        # Schedule automatic removal from _seen after the debounce window
+        threading.Timer(self.DEDUP_TTL, self._clear_seen, args=(abs_path,)).start()
 
         # Notify the dashboard if one is attached
         if self._dashboard:
@@ -133,7 +141,7 @@ class FileSystemWatcher:
     # ------------------------------------------------------------------
 
     def start(self) -> None:
-        """Spin up the background observer thread."""
+        """Spin up the background observer thread and scan pre-existing files."""
         Path(self._watch_dir).mkdir(parents=True, exist_ok=True)
 
         self._observer = Observer()
@@ -148,6 +156,31 @@ class FileSystemWatcher:
         if self._dashboard:
             self._dashboard.log_event(
                 f"[green]Watcher active:[/] {self._watch_dir}"
+            )
+
+        # Enqueue files that already existed before the watcher started
+        self._scan_existing_files()
+
+    def _scan_existing_files(self) -> None:
+        """
+        Walk the watched directory and enqueue every file that was already
+        present when the watcher started.  This catches files dropped before
+        startup and files that were missed during a previous run.
+        """
+        count = 0
+        for root, _dirs, files in os.walk(self._watch_dir):
+            for fname in files:
+                fpath = os.path.join(root, fname)
+                self._handler._enqueue(fpath)
+                count += 1
+
+        if count and self._dashboard:
+            self._dashboard.log_event(
+                f"[cyan]Startup scan:[/] enqueued {count} pre-existing file(s)"
+            )
+        elif self._dashboard:
+            self._dashboard.log_event(
+                "[dim]Startup scan: monitored_zone is empty.[/dim]"
             )
 
     def stop(self) -> None:
